@@ -38,6 +38,8 @@ O container do banco de dados postgres vai iniciar na porta 5432 e a aplicação
 Se for necessário alterar alguma configuração para subir na sua máquina assim como porta ou algo do tipo as alterações precisam ser feitas no
 arquivo src/main/resources/application.yaml e se necessário no /infra/docker-compose.yaml.
 
+Obs: Pode ser que demore a primeira execução para baixar todas as dependências.
+
 ### Usando
 A aplicação expõe um swagger onde é possível fazer uso das APIs, que poderá ser acessado pelo:
 http://localhost:8080/swagger-ui/index.html
@@ -52,6 +54,11 @@ especificação open-api para usar nas respectivas aplicações.
 
 É possível cadastrar transações de entrada e saída, recuperar uma transação e listar todas e no endpoint de relatório,
 ter um consolidado do saldo do dia passando a data de ínicio e a data final como filtro.
+
+A aplicação expões métricas prometheus no endpoint /prometheus e métricas do spring-boot, diversas no /metrics.
+
+Também tem /health que valida se a app está health e validando conexão com banco, /health/liveness e
+/health/readiness para ser usado como probe para o kubernetes geralmente.
 
 ### Testes
 
