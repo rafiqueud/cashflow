@@ -1,0 +1,42 @@
+spring:
+  main:
+    banner-mode: "off"
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/cash_flow}
+    username: cash_flow
+    password: cash_flow
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, prometheus, metrics"
+      base-path: "/"
+  endpoint:
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include:
+            - livenessState
+            - db
+        readiness:
+          include:
+            - readinessState
+            - db
+server:
+  port: 8080
+  shutdown: graceful
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: tag_version_0_0_1
+      author: argenta
+  - include:
+      relativeToChangelogFile: true
+      file: changes/2023-05-18-0-create-cash-table.sql
+  - include:
+      relativeToChangelogFile: true
+      file: changes/2023-05-18-1-create-cash-indexes.sql
