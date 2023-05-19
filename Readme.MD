@@ -97,6 +97,7 @@ Controle de comunicação usando Istio.
 
 Adicionar validações SAST/Segurança no processo de test/build.
 
+Adicionar funcionalidade de open-telemetry/tracing, x-b3 pattern. (Spring-Sleuth with Istio)
 
-
+Adicionar funcionalidade de logs em formato JSON com dados de tracing. (Spring/Log4j/JSON Layout)
 
