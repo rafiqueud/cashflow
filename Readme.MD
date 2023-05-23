@@ -101,3 +101,8 @@ Adicionar funcionalidade de open-telemetry/tracing, x-b3 pattern. (Spring-Sleuth
 
 Adicionar funcionalidade de logs em formato JSON com dados de tracing. (Spring/Log4j/JSON Layout)
 
+# Solução proposta
+
+Inicialmente o código representa o MS Flow e MS Report(ainda não separados em 2 ms). A solução final proposta a fim de demonstrar uma proposta com recursos avançados poderia ficar como a seguir: 
+
+![img.png](readme%2Fsolution.jpg)
